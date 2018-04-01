@@ -1,0 +1,55 @@
+mat-sidenav {
+    width: 200px;
+    background-color: #505857;
+}
+
+#navButton {
+  margin-right: 1%;
+  color: white;
+}
+
+.logo {
+    font-family: 'Ultra', serif;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+mat-toolbar {
+    background-color: #505857;
+}
+.userIcon {
+    height: 120px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 10px;
+    color: white;
+}
+.nom {
+    text-align: center;
+    margin: 0px;
+    color: white;
+}
+.matricule {
+    text-align: center;
+    margin-top: 0px;
+    color: white;
+}
+.container {
+    display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+  }
+.mat-list-item {
+    color: white;
+}

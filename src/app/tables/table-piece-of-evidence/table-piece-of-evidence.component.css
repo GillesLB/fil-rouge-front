@@ -1,0 +1,15 @@
+mat-row:hover {
+    background-color: #f2f4f7;
+    color: white;
+ }
+ .add {
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     margin: 20px;
+ }
+mat-toolbar {
+    font-size: 16px;
+    text-align: center;
+    height: 40px;
+}

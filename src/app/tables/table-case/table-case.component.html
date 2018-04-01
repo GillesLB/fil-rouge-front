@@ -1,0 +1,38 @@
+<section>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtre">
+  </mat-form-field>
+  <mat-table [dataSource]="caseSource" matSort>
+    <!-- Définition des lignes -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" mat-sort-header>Identifiant</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs mat-sort-header>Date de création</mat-header-cell>
+      <mat-cell *matCellDef="let row" fxHide.xs>{{row.dateCreation | date: 'dd-MM-yyyy'}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" mat-sort-header>Nom</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs mat-sort-header>Description</mat-header-cell>
+      <mat-cell *matCellDef="let row" fxHide.xs>{{row.description}}</mat-cell>
+    </ng-container>
+    <!-- Définition des colonnes -->
+    <mat-header-row *matHeaderRowDef="caseColumns" class="titreTableau"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: caseColumns" routerLink="/affaires/{{row.id}}"></mat-row>
+  </mat-table>
+
+  <!-- pagination -->
+  <mat-paginator #paginator
+    [pageSize]=8
+    [showFirstLastButtons]="true">
+  </mat-paginator>
+</section>
+<div *ngIf='!caseSource' fxLayoutAlign='center center'>
+    <mat-spinner></mat-spinner>
+</div>
+
+

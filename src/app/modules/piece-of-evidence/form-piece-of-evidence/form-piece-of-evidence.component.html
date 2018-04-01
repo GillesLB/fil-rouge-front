@@ -1,0 +1,19 @@
+<!-- Formulaire de création/édition de véhicule -->
+<mat-card>
+  <mat-toolbar class='titrePage' fxLayoutAlign="center center">{{editing ? 'Edition' : 'Création'}}</mat-toolbar>
+  <form #pieceOfEvidenceForm="ngForm"
+    (ngSubmit)="onSubmit(pieceOfEvidenceForm)"
+    fxLayout="column">
+    <mat-form-field>
+      <input matInput type="text" required
+        placeholder="Type" name="type"
+        [(ngModel)]="pieceOfEvidence.type">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" required
+        placeholder="Numéro de serie" name="serialNumber"
+        [(ngModel)]="pieceOfEvidence.serialNumber">
+    </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="!pieceOfEvidenceForm.valid" class="envoyer">Envoyer</button>
+  </form>
+</mat-card>

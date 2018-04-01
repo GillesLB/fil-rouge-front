@@ -1,0 +1,34 @@
+<mat-card>
+<mat-table [dataSource]="pieceOfEvidenceSource">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau">Idenftifiant</mat-header-cell>
+    <mat-cell *matCellDef="let row"></mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="type">
+    <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs>Type</mat-header-cell>
+    <mat-cell *matCellDef="let row" fxHide.xs>{{row.type}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="serialNumber">
+    <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs>Numéro de série</mat-header-cell>
+    <mat-cell *matCellDef="let row" fxHide.xs>{{row.serialNumber}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="createDate">
+    <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau">Date de création</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.createDate | date: 'dd/MM/yyyy'}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="updateDate">
+    <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau">Dernière mise à jour</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.updateDate | date: 'dd/MM/yyyy'}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs>Editer</mat-header-cell>
+      <mat-cell *matCellDef="let row" fxHide.xs><!-- <a (click)="dialogEdit(row)"> --><i class="fas fa-pencil-alt"></i><!-- </a> --></mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs>Ôter le lien</mat-header-cell>
+      <mat-cell *matCellDef="let row" fxHide.xs><!-- <a (click)="dialogDeleteLink(row)"> --><i class="fas fa-unlink icon"></i><!-- </a> --></mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="pieceOfEvidenceColumns" class="titreTableau"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: pieceOfEvidenceColumns"></mat-row>
+</mat-table>
+</mat-card>

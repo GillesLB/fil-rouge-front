@@ -1,0 +1,15 @@
+<form #poeForm="ngForm"
+      (ngSubmit)="onSubmit(poeForm)"
+      fxLayout="column" class="container">
+  <mat-form-field>
+    <input matInput type="text" required
+          placeholder="type" name="type"
+          [(ngModel)]="poe.type">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" required
+          placeholder="serialNumber" name="serialNumber"
+          [(ngModel)]="poe.serialNumber">
+  </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="!poeForm.valid" class="envoyer">Créer & Associer</button>
+</form>

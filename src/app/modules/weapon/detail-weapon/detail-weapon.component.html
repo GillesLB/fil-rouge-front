@@ -1,0 +1,29 @@
+<section fxLayout='row' fxLayout.xs='column'>
+  <div fxFlex='70'>
+    <mat-card>
+      <div fxLayout='row' fxLayout.xs='column'>
+      <!-- détails de l'arme -->
+      <article fxFlex='40'>
+        <h1 class="titreDetail">ARME</h1>
+        <h6>dernière mise à jour le {{weapon?.updateDate | date: 'dd/MM/yyyy'}}</h6>
+        <p>Marque : <b>{{weapon?.type}}</b></p>
+        <p>Modèle : <b>{{weapon?.modele}}</b></p>
+        <p>Date de création : <b>{{weapon?.createDate | date: 'dd/MM/yyyy'}}</b></p>   
+      </article>
+      <mat-card fxFlex='60' fxLayoutAlign="center center">PHOTO</mat-card>
+    </div>
+    <h3>Affaire associées</h3>
+      <app-table-weapon></app-table-weapon>
+  </mat-card>
+  <div  fxLayout="row" class="bouton" fxLayoutAlign="begin">
+    <!-- options -->
+    <button mat-raised-button class="couleurBoutonForm" routerLink="edit"><mat-icon>mode_edit</mat-icon>&nbsp;Editer</button>&nbsp;&nbsp;&nbsp;
+    <button mat-raised-button class="couleurBoutonForm" (click)="delete()"><mat-icon>warning</mat-icon>&nbsp;Supprimer</button>&nbsp;&nbsp;&nbsp;
+    <button mat-raised-button class="couleurBoutonForm" (click)="backToList()"><mat-icon>reply</mat-icon>&nbsp;Retour</button>
+  </div>
+</div>
+<!-- édition des informations des armes -->
+<div fxFlex='30'>
+  <router-outlet></router-outlet>
+</div>
+</section>

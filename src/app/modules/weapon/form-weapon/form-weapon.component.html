@@ -1,0 +1,19 @@
+<!-- modifier ou éditer une arme -->
+<mat-card>
+  <mat-toolbar class='titrePage' fxLayoutAlign="center center">{{editing ? 'Edition' : 'Création'}}</mat-toolbar>
+  <form #weaponForm="ngForm"
+    (ngSubmit)="onSubmit(weaponForm)"
+    fxLayout="column">
+    <mat-form-field>
+      <input matInput type="text" required
+        placeholder="Type" name="type"
+        [(ngModel)]="weapon.type">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" required
+        placeholder="Modèle" name="modele"
+        [(ngModel)]="weapon.modele">
+    </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="!weaponForm.valid" class="envoyer">Envoyer</button>
+  </form>
+</mat-card>

@@ -1,0 +1,238 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+}
+
+button {
+    color: rgb(190, 98, 12);
+}
+
+footer {
+    background-color: #042f52 !important;
+    height: 45px !important;
+    width: 100%;
+    vertical-align: middle !important;
+    line-height:0em;
+    color: white !important;
+    padding-bottom: -10;
+}
+
+h4 {
+    color: white;
+    margin-left: 15px;
+}
+
+mat-icon {
+    color: white !important;
+}
+
+mat-row:hover {
+    background-color: #f2f4f7;
+}
+
+mat-sidenav {
+    width: 200px;
+    background-color: #042f52 !important;
+    color: white !important;
+}
+
+mat-sidenav-container {
+    height: 85vh;
+}
+
+mat-sidenav-content {
+    background-color: rgb(250, 249, 211);
+}
+
+mat-toolbar {
+    background-color: #042f52 !important;
+    color: white !important;
+}
+
+.add {
+    background-color: rgb(190, 98, 12) !important;
+}
+
+.aligner {
+    display: flex;
+    float: left;
+}
+.alignerAuCentre {
+    text-align: center !important;
+}
+
+.alignerAGauche {
+    text-align: left !important;
+}
+
+.alignerADroite {
+    text-align: right !important;
+}
+
+.bandeau {
+    background-color: #6D7877;
+    height: 61.75px;
+    color: white;
+}
+
+.bouton {
+    margin-left: 10px;
+}
+
+.clicLigneTableau:hover {
+    background-color: rgba(4, 47, 82, 0.03);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.couleurBoutonForm {
+    background-color: rgb(190, 98, 12) !important;
+    color: white !important;
+}
+
+.envoyer {
+    background-color: rgb(190, 98, 12);
+    color: white !important;
+}
+
+.fond {
+    background-color: rgb(250, 249, 211);
+}
+
+.identity {
+    background-color: #1f5480 !important;
+}
+
+.lastbutton {
+    margin-right: 30px;
+}
+
+.logo {
+    font-family: 'Ultra', serif;
+    font-size: 60px !important;
+    font-weight: bold !important;
+    text-align: center;
+    color: white;
+}
+
+.mat-card {
+    margin: 10px;
+}
+
+.mat-fab {
+    display: flex;
+    float: left;
+}
+
+.mat-icon, .svg-inline--fa {
+    cursor: pointer;
+}
+
+.mat-list-item {
+    color: white !important;
+}
+
+.mat-list-item:hover {
+    background-color: #1f5480 !important;
+}
+
+.matricule {
+    text-align: center;
+    margin-top: 0px;
+    color: white;
+}
+
+.nom {
+    text-align: center;
+    margin: 0px;
+    color: white;
+}
+
+.sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+}
+
+.taillePoliceTitreTableau {
+    font-size: 16px !important;
+    color: white !important;
+}
+
+.titreAffaire {
+    display: flex;
+    text-align: left;
+    height: 50px;
+    width: 760px;
+    line-height: 2em;
+    background-color: #042f52;
+    color: white;
+    font-size: 26px;
+}
+
+.titreDetail {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.titrePage {
+    display: flex;
+    text-align: left;
+    height: 50px;
+    width: 100%;
+    line-height: 2em;
+    background-color: #042f52;
+    color: white;
+    font-size: 26px;
+}
+
+.titrePage2 {
+    background-color: #042f52;
+    color: white;
+    height: 50px;
+    font-size: 26px;
+}
+
+.titrePageIcone {
+    float: left;
+    margin: auto;
+}
+
+.titreTableau {
+    background-color: #1f5480;
+}
+
+.taillePoliceTitreTableau {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.userIcon {
+    height: 120px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 10px;
+    color: white;
+}
+
+#gauche {
+    text-align: left !important;
+}
+
+#navButton {
+  margin-right: 1%;
+  color: white;
+}

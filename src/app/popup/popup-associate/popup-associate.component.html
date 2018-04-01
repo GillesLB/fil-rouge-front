@@ -1,0 +1,55 @@
+<p fxLayoutAlign='center'>Associer</p>
+<mat-divider></mat-divider>
+<mat-form-field>
+  <mat-select placeholder="Section" [(ngModel)]="selectedSection" #sectionAssociate>
+    <mat-option *ngFor="let sectionAssociate of sections" [value]="sectionAssociate">
+      {{ sectionAssociate }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div [(ngSwitch)]="selectedSection">
+  <ng-container *ngSwitchCase="'Pièces à conviction'">
+      <mat-form-field>
+          <mat-select placeholder="Nom" [(ngModel)]="selectedPieceOfEvidence" #poe >
+            <mat-option *ngFor="let poe of convictions" [value]="poe">
+              {{ poe.type }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p fxLayoutAlign='center'>Détails de la pièce à conviction</p>
+        <mat-divider></mat-divider>
+        <p>Type : {{selectedPieceOfEvidence?.type}}</p>
+        <p>Numéro de série : {{selectedPieceOfEvidence?.serialNumber}}</p>
+        <button mat-raised-button class="envoyer" fxLayoutAlign='center center' (click)='associatePoe(selectedPieceOfEvidence)'>Associer</button>
+  </ng-container>
+  <ng-container *ngSwitchCase="'Armes'">
+    <mat-form-field>
+      <mat-select placeholder="Nom" [(ngModel)]="selectedWeapon" #weapon >
+        <mat-option *ngFor="let weapon of weapons" [value]="weapon">
+          {{ weapon.modele }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p fxLayoutAlign='center'>Détails de l'arme</p>
+    <mat-divider></mat-divider>
+    <p>Type : {{selectedWeapon?.type}}</p>
+    <p>Modèle : {{selectedWeapon?.modele}}</p>
+    <button mat-raised-button class="envoyer" fxLayoutAlign='center center'(click)='associateWeapon(selectedWeapon)'>Associer</button>
+  </ng-container>
+  <ng-container *ngSwitchCase="'Véhicules'">
+    <mat-form-field>
+      <mat-select placeholder="Immatriculation" [(ngModel)]="selectedVehicule" #vehicule >
+        <mat-option *ngFor="let vehicule of vehicules" [value]="vehicule">
+          {{ vehicule.licensePlate }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p fxLayoutAlign='center'>Détails du véhicule</p>
+    <mat-divider></mat-divider>
+    <p>Marque : {{selectedVehicule?.marque}}</p>
+    <p>Modèle : {{selectedVehicule?.model}}</p>
+    <p>Couleur : {{selectedVehicule?.color}}</p>
+    <p>Immatriculation : {{selectedVehicule?.licensePlate}}</p>
+    <button mat-raised-button class="envoyer" fxLayoutAlign='center center' (click)='associateVehicule(selectedVehicule)'>Associer</button>
+  </ng-container>
+</div>

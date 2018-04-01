@@ -1,0 +1,55 @@
+<!-- titre -->
+<mat-card>
+  <div class="titrePage" fxLayout="row">
+      <div fxFlex="90">
+        <img class="titrePageIcone" src="assets/icones/icone-voiture.png"/>&nbsp;&nbsp;&nbsp;<b>Liste des véhicules</b>
+      </div>
+      <div class='lastbutton' fxLayoutAlign='right center'>
+        <button mat-raised-button class="envoyer" routerLink="/newvehicule">Ajouter un véhicule</button>
+      </div>
+  </div>
+
+<!-- tableau -->
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtre">
+  </mat-form-field>
+  <mat-table [dataSource]="vehiculeSource" matSort>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs mat-sort-header>Identifiant</mat-header-cell>
+      <mat-cell *matCellDef="let row" fxHide.xs>{{row.id}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs mat-sort-header>Date d'intégration</mat-header-cell>
+      <mat-cell *matCellDef="let row" fxHide.xs>{{row.createDate | date: 'dd/MM/yyyy'}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="model">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" mat-sort-header>Modèle</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.model}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="marque">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs mat-sort-header>Marque</mat-header-cell>
+      <mat-cell *matCellDef="let row" fxHide.xs>{{row.marque}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="color">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs mat-sort-header>Couleur</mat-header-cell>
+      <mat-cell *matCellDef="let row" fxHide.xs>{{row.color}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="licensePlate">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" mat-sort-header>Immatriculation</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.licensePlate}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="updateDate">
+      <mat-header-cell *matHeaderCellDef fxHide.xs class="taillePoliceTitreTableau" mat-sort-header>Mise à jour</mat-header-cell>
+      <mat-cell *matCellDef="let row" fxHide.xs>{{row.updateDate | date: 'dd/MM/yyyy'}}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="vehiculeColumns" class="titreTableau"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: vehiculeColumns" class="clicLigneTableau" routerLink="{{row.id}}"></mat-row>
+  </mat-table>
+
+  <!-- pagination -->
+  <mat-paginator #paginator
+                 [pageSize]=8
+                 [pageSizeOptions]="[5, 10, 20]"
+                 [showFirstLastButtons]="true">
+  </mat-paginator>
+</mat-card>

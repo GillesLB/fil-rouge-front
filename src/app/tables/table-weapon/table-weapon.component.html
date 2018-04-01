@@ -1,0 +1,34 @@
+<mat-card>
+<mat-table [dataSource]=weaponSource matSort>
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs>Identifiant</mat-header-cell>
+    <mat-cell *matCellDef="let row" fxHide.xs>{{row.id}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="type">
+    <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs>Type</mat-header-cell>
+    <mat-cell *matCellDef="let row" fxHide.xs>{{row.type}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="modele">
+    <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau">Modèle</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.modele}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="createDate">
+    <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs>Date de création</mat-header-cell>
+    <mat-cell *matCellDef="let row" fxHide.xs>{{row.createDate | date: 'dd/MM/yyyy'}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="updateDate">
+    <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs>Mise à jour</mat-header-cell>
+    <mat-cell *matCellDef="let row" fxHide.xs>{{row.updateDate | date: 'dd/MM/yyyy'}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs>Editer</mat-header-cell>
+      <mat-cell *matCellDef="let row" fxHide.xs><a (click)="dialogEdit(row)"><i class="fas fa-pencil-alt"></i></a></mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef class="taillePoliceTitreTableau" fxHide.xs>Ôter le lien</mat-header-cell>
+      <mat-cell *matCellDef="let row" fxHide.xs><!-- <a (click)="dialogDeleteLink(row)"> --><i class="fas fa-unlink"></i><!-- </a> --></mat-cell>
+  </ng-container>
+<mat-header-row *matHeaderRowDef="weaponColumns" class="titreTableau"></mat-header-row>
+<mat-row *matRowDef="let row; columns: weaponColumns"></mat-row>
+</mat-table>
+</mat-card>

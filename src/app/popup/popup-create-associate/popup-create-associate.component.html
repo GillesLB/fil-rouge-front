@@ -1,0 +1,20 @@
+<p fxLayoutAlign='center'>Créer & Associer</p>
+<mat-divider></mat-divider>
+<mat-form-field>
+  <mat-select placeholder="Section" [(ngModel)]="selectedCreate" #sectionCreate (click)="sectionCreate.close()">
+    <mat-option *ngFor="let sectionCreate of sections" [value]="sectionCreate">
+      {{ sectionCreate }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div [(ngSwitch)]="selectedCreate">
+  <ng-container *ngSwitchCase="'Armes'">
+    <app-associate-weapon></app-associate-weapon>
+  </ng-container>
+  <ng-container *ngSwitchCase="'Pièces à conviction'">
+    <app-associate-piece-of-evidence></app-associate-piece-of-evidence>
+  </ng-container>
+  <ng-container *ngSwitchCase="'Véhicules'">
+    <app-associate-vehicule [policeCase]="policeCase"></app-associate-vehicule>
+  </ng-container>
+</div>

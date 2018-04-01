@@ -1,0 +1,25 @@
+<form #vehiculeForm="ngForm"
+      (ngSubmit)="onSubmit(vehiculeForm)"
+      fxLayout="column" class="container">
+  <mat-form-field>
+    <input matInput type="text" required
+          placeholder="name" name="name"
+          [(ngModel)]="vehicule.marque">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" required
+          placeholder="model" name="model"
+          [(ngModel)]="vehicule.model">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" required
+          placeholder="color" name="color"
+          [(ngModel)]="vehicule.color">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" required
+          placeholder="Immatriculation" name="licensePlate"
+          [(ngModel)]="vehicule.licensePlate">
+  </mat-form-field>
+  <button mat-raised-button type="submit" [disabled]="!vehiculeForm.valid" class="envoyer">Créer & Associer</button>
+</form>

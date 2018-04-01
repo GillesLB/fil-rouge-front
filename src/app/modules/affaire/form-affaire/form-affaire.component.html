@@ -1,0 +1,19 @@
+<!-- Formulaire de création/édition de véhicule -->
+<mat-card *ngIf='policeCase'>
+  <mat-toolbar class='titrePage' fxLayoutAlign="center center">{{editing ? 'Edition' : 'Création'}}</mat-toolbar>
+  <form #vehiculeForm="ngForm"
+    (ngSubmit)="onSubmit(vehiculeForm)"
+    fxLayout="column">
+    <mat-form-field>
+      <input matInput type="text" required
+        placeholder="Nom" name="name"
+        [(ngModel)]="policeCase.name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" required
+        placeholder="Description" name="description"
+        [(ngModel)]="policeCase.description">
+    </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="!vehiculeForm.valid" class="envoyer">Envoyer</button>
+  </form>
+</mat-card>

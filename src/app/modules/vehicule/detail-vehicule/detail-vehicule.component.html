@@ -1,0 +1,31 @@
+<section fxLayout='row' fxLayout.xs='column'>
+  <div fxFlex='70'>
+    <mat-card>
+      <div fxLayout='row' fxLayout.xs='column'>
+        <!-- détails du véhicule -->
+        <article fxFlex='40'>
+          <h1 class="titreDetail">VEHICULE</h1>
+          <h6>dernière mise à jour le {{vehicule?.updateDate | date: 'dd/MM/yyyy'}}</h6>
+          <p>Marque : <b>{{vehicule?.marque}}</b></p>
+          <p>Modèle : <b>{{vehicule?.model}}</b></p>
+          <p>Couleur : <b>{{vehicule?.color}}</b></p>
+          <p>Plaque d'immatriculation : <b>{{vehicule?.licensePlate}}</b></p>
+          <p>Date de création : <b>{{vehicule?.createDate | date: 'dd/MM/yyyy'}}</b></p>   
+        </article>
+        <mat-card fxFlex='60' fxLayoutAlign="center center">PHOTO</mat-card>
+      </div>
+     <h3>Affaire associées</h3>
+     <app-table-vehicule></app-table-vehicule>
+    </mat-card>
+    <div  fxLayout="row" class="bouton" fxLayoutAlign="begin">
+      <!-- options -->
+      <button mat-raised-button class="couleurBoutonForm" routerLink="edit"><mat-icon>mode_edit</mat-icon>&nbsp;Editer</button>&nbsp;&nbsp;&nbsp;
+      <button mat-raised-button class="couleurBoutonForm" (click)="delete()"><mat-icon>warning</mat-icon>&nbsp;Supprimer</button>&nbsp;&nbsp;&nbsp;
+      <button mat-raised-button class="couleurBoutonForm" (click)="backToList()"><mat-icon>reply</mat-icon>&nbsp;Retour</button>
+  </div>
+</div>
+  <!-- édition des informations du véhicule -->
+  <div fxFlex='30'>
+    <router-outlet></router-outlet>
+  </div>
+</section>
