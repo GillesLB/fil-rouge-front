@@ -34,8 +34,7 @@ export class TableWeaponComponent implements OnInit {
     );
   }
 
-  // ouverture du popup avec le contenu de la ligne en paramètre
-  dialogEdit(row) {
+  dialogEdit(row) { // ouverture du popup avec le contenu de la ligne en paramètre
     this.popupService.openEditWeapon(row);
   }
 

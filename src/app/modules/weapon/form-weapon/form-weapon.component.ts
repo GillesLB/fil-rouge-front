@@ -20,19 +20,15 @@ export class FormWeaponComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    // récupération du path
-    const urlSegment = this.route.snapshot.url[0];
-    // mode edit en fonction de l'URL
-    if (urlSegment && urlSegment.path === 'edit') {
-      // récupération de l'ID du vehicule
-      const id = +this.route.parent.snapshot.paramMap.get('id');
-      // récupération de l'objet véhicule
-      this.weaponService.getWeapon(id).subscribe(
+
+    const urlSegment = this.route.snapshot.url[0]; // récupération du path
+    if (urlSegment && urlSegment.path === 'edit') { // mode edit en fonction de l'URL
+      const id = +this.route.parent.snapshot.paramMap.get('id'); // récupération de l'ID du vehicule
+      this.weaponService.getWeapon(id).subscribe( // récupération de l'objet véhicule
         data => this.weapon = data);
       this.editing = true;
     } else {
-      // mode création (formulaire vide)
-      this.editing = false;
+      this.editing = false; // mode création (formulaire vide)
       this.weapon = {
         createDate: '',
         type: '',
@@ -42,14 +38,11 @@ export class FormWeaponComponent implements OnInit {
     }
   }
 
-  // création ou modification de l'arme
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm) { // création ou modification de l'arme
     if (this.editing) {
-      // édition
-      this.weaponService.updateWeapon(this.weapon).subscribe();
+      this.weaponService.updateWeapon(this.weapon).subscribe(); // édition
     } else {
-      // création
-      this.weaponService.createWeapon(this.weapon).subscribe();
+      this.weaponService.createWeapon(this.weapon).subscribe(); // création
       this.router.navigate(['/weapons']);
    }
   }

@@ -16,25 +16,22 @@ export class DetailWeaponComponent implements OnInit {
 
   constructor(private weaponService: WeaponService, private route: ActivatedRoute, private router: Router) { }
 
-  // initialise le component / la directive après qu'Angular ait valorisé @Input.
+  /* initialise le component / la directive
+  * après qu'Angular ait valorisé @Input */
   ngOnInit() {
-    // récupération de l'ID (dans l'URL)
-    this.id = +this.route.snapshot.paramMap.get('id');
-    // récupération de l'arme
-    this.weaponService.getWeapon(this.id)
+    this.id = +this.route.snapshot.paramMap.get('id'); // récupération de l'ID (dans l'URL)
+    this.weaponService.getWeapon(this.id) // récupération de l'arme
     .subscribe(data =>
       this.weapon = data,
       error => this.errText = 'la requête a échouée');
     this.weaponService.weapon = this.weapon;
   }
 
-  // retour à la liste
-  backToList() {
+  backToList() { // retour à la liste
     this.router.navigate(['../'], { relativeTo: this.route });
   }
 
-  // supprime l'arme et retour accueil
-  delete() {
+  delete() { // supprime l'arme et retour accueil
     this.weaponService.deleteWeapon(this.id)
     .subscribe( () =>
       this.router.navigate(['../'], { relativeTo: this.route }));
