@@ -19,11 +19,11 @@ Conçu et réalisé par l'équipe GGSF (Gérôme Gilles Stéphan Frédéric)
 **Mode opératoire :**
 
 1 - Installer NodeJS (aller sur https://nodejs.org/fr/ et suivre la procédure)  
-2 - Installer NPM (ouvrir l'invite de commande et entrer npm install npm@latest -g)   
-3 - Installer Angular CLI (ouvrir l'invite de commande et entrer npm install -g @angular/cli)  
-4 - Installer Karma (npm install -g karma) et Jasmine (npm install -g jasmine) pour executer les tests  
+2 - Installer NPM (ouvrir l'invite de commande et entrer **npm install npm@latest -g**)   
+3 - Installer Angular CLI (ouvrir l'invite de commande et entrer **npm install -g @angular/cli**)  
+4 - Installer Karma (**npm install -g karma**) et Jasmine (**npm install -g jasmine**) pour executer les tests  
 5 - Ouvrir l'IDE choisi (ici Visual Studio Code) et le mettre à jour si besoin  
-6 - Importer le projet sous l'IDE et installer les dépendances (entrer NPM install dans la console de l'IDE)  
+6 - Importer le projet sous l'IDE et installer les dépendances (entrer **npm install** dans la console de l'IDE)  
 
 ----------
 
