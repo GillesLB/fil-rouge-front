@@ -26,7 +26,7 @@ Conçu et réalisé par l'équipe GGSF (Gérôme Gilles Stéphan Frédéric)
 6 - Importer le projet sous l'IDE et installer les dépendances (entrer **npm install** dans la console de l'IDE)  
   
 Pour démarrer l'application, il suffira de se placer sur le dossier du projet, de l'ouvrir  dans la console de l'IDE  
-et de taper **ng serve**. Ensuitr, il faudra se connecter (grâce à un navigateur) à l'adresse **http://localhost:4200**.  
+et de taper **ng serve**. Ensuite, il faudra se connecter (grâce à un navigateur) à l'adresse **http://localhost:4200**.  
 Cela va ainsi permettre de visualiser le fonctionnement du projet de manière complète, mais en version locale.
 
 ----------
