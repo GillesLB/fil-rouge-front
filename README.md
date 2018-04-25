@@ -24,6 +24,10 @@ Conçu et réalisé par l'équipe GGSF (Gérôme Gilles Stéphan Frédéric)
 4 - Installer Karma (**npm install -g karma**) et Jasmine (**npm install -g jasmine**) pour executer les tests  
 5 - Ouvrir l'IDE choisi (ici Visual Studio Code) et le mettre à jour si besoin  
 6 - Importer le projet sous l'IDE et installer les dépendances (entrer **npm install** dans la console de l'IDE)  
+  
+Pour démarrer l'application, il suffira de se placer sur le dossier du projet, de l'ouvrir  dans la console de l'IDE  
+et de taper **ng serve**. Ensuitr, il faudra se connecter (grâce à un navigateur) à l'adresse **http://localhost:4200**.  
+Cela va ainsi permettre de visualiser le fonctionnement du projet de manière complète, mais en version locale.
 
 ----------
 
@@ -101,5 +105,4 @@ et modifier le fichier en conséquence.
 
 ----------
 
-    
-Pour démarrer l'application, il suffira de se placer sur le dossier du projet, de l'ouvrir  dans la console de l'IDE et de taper **ng serve**. Ensuitr, il faudra se connecter (grâce à un navigateur) à l'adresse **http://localhost:4200**. Cela va ainsi permettre de visualiser le fonctionnement du projet de manière complète, mais en version locale.
+  
